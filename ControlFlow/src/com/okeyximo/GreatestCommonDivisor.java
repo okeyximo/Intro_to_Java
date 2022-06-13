@@ -1,6 +1,19 @@
 package com.okeyximo;
 
 public class GreatestCommonDivisor {
+    public static int getGreatestCommonDivisor(int first, int second) {
+        if (first < 10 || second < 10)
+            return (-1);
+        int divisor = 1, hcf = 0;
+
+        while (divisor <= first && divisor <= second) {
+            if (first % divisor == 0 && second % divisor == 0){
+                hcf = divisor;
+            }
+            divisor++;
+        }
+        return (hcf);
+    }
 }
 
 /**
@@ -10,7 +23,8 @@ public class GreatestCommonDivisor {
  *
  * The method should return the greatest common divisor of the two numbers (int).
  *
- * The greatest common divisor is the largest positive integer that can fully divide each of the integers (i.e. without leaving a remainder).
+ * The greatest common divisor is the largest positive integer that can fully divide each of the integers
+ * (i.e. without leaving a remainder).
  *
  *
  * For example 12 and 30:

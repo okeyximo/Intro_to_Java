@@ -1,13 +1,38 @@
 package com.okeyximo;
 
 public class LastDigitChecker {
+    public static boolean hasSameLastDigit(int a, int b, int c) {
+        if (a < 10 || a > 1000) return false;
+        else if (b < 10 || b > 1000) return false;
+        else if (c < 10 || c > 1000) return false;
+
+        int aUnit = a % 10;
+        int bUnit = b % 10;
+        int cUnit = c % 10;
+
+        if (aUnit == bUnit || aUnit == cUnit || bUnit == cUnit) return true;
+
+        return false;
+
+    }
+
+    public static boolean isValid(int a) {
+        if (a < 10 || a > 1000) return (false);
+        return (true);
+
+    }
+
 }
+
+
 /**
  * Write a method named hasSameLastDigit with three parameters of type int.
  *
- * Each number should be within the range of 10 (inclusive) - 1000 (inclusive). If one of the numbers is not within the range, the method should return false.
+ * Each number should be within the range of 10 (inclusive) - 1000 (inclusive).
+ * If one of the numbers is not within the range, the method should return false.
  *
- * The method should return true if at least two of the numbers share the same rightmost digit; otherwise, it should return false.
+ * The method should return true if at least two of the numbers share the same rightmost digit;
+ * otherwise, it should return false.
  *
  *
  * EXAMPLE INPUT/OUTPUT:

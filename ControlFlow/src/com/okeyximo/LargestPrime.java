@@ -1,6 +1,18 @@
 package com.okeyximo;
 
 public class LargestPrime {
+    public static int getLargestPrime(int number){
+        if (number <= 1)
+            return (-1);
+        int factor = 0;
+        for (int i = 2; i <= number; i++){
+            while (number % i == 0){
+                factor = i;
+                number /= i;
+            }
+        }
+        return factor;
+    }
 }
 /**
  * Write a method named getLargestPrime with one parameter of type int named number.
